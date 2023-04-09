@@ -1,4 +1,5 @@
-import React, { useState, useQuery } from 'react';
+import React from 'react';
+import { useQuery } from '@apollo/client'
 import {
   Container,
   Card,
@@ -29,7 +30,7 @@ const SavedBooks = () => {
     }
 
     try {
-      const response = await deleteBook(bookId, token);
+      const response = await removeBook(bookId, token);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
